@@ -1,0 +1,43 @@
+body{
+	background: #ddd;
+}
+
+.g-container{
+	max-width: 1280px;
+	margin: 0 auto;
+	column-gap: 10px;
+	column-count: 3;
+}
+
+.g-container img{
+	width: calc(100% - 10px);
+	height: auto;
+	display: inline-block;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.logo-gl{
+	margin: 5px;
+	display: inline-block;
+	float: left;
+	height: auto;
+	width: 210px;
+}
+
+a{
+	float: right;
+	display: inline-block;
+	width: 140px;
+	line-height: 40px;
+	border: 2px solid #333;
+	color: #333;
+	text-align: center;
+	text-decoration: none;
+	margin: 20px;
+}
+
+a:hover{
+	background: #333;
+	color: #fff;
+}
