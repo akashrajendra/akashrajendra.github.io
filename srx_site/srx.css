@@ -1,0 +1,412 @@
+*{
+  transition: all 0.4s;
+  outline: none;
+}
+
+body{
+  margin: 0px;
+  background: #222;
+  color: #d8d8d8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+p{
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: inherit;
+}
+
+#load-overlay{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  background: #fff;
+  height: 100vh;
+  z-index: 3000;
+}
+
+#menu-toggle{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  display: inline-block;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #d8d8d8;
+  color: #222;
+  border-radius: 3px;
+  z-index: 3;
+  visibility: hidden;
+}
+
+.menu-tgl{
+  right: 160px !important;
+}
+
+.showed-menu{
+  right: 0px !important;
+}
+
+.showed-sect{
+  filter: opacity(0.3);
+}
+
+.clearfix{
+  clear: both;
+}
+
+#menu-container{
+  background: #222;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.menucontaineronscroll{
+  background: #111;
+}
+
+#menu-wrapper{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+#menubar{
+  margin: 0px;
+  list-style-type: none;
+  padding: 0px;
+}
+
+#logo{
+  height: 40px;
+  float: left !important;
+}
+
+#logo a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-image: url('srx-logo.svg');
+  background-repeat: no-repeat;
+  border: none !important;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#logo a:hover{
+  transform: scale(1.2);
+}
+
+#logo a:hover:before{
+  visibility: hidden !important;
+}
+
+#menubar li{
+  padding: 0px;
+  float: right;
+}
+
+#menubar li a{
+  position: relative;
+  padding: 0px 10px 0px 10px;
+  text-decoration: none;
+  line-height: 40px;
+  color: #d8d8d8;
+}
+
+#menubar li a:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: -5px;
+	left: 0;
+	background-color: #4fb2e8;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+
+#menubar li a:hover:before{
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+.panel{
+  font-weight: 700;
+	display: table;
+	width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.pchild{
+  padding: 10px;
+  box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+
+.pchild-m{
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.panel-bg{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: panelBG;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.pcwrapper{
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.panel-bg:before{
+  content: " ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 100%);
+}
+
+@keyframes panelBG{
+  from{
+    transform: scale(1.3);
+  }
+
+  to{
+    transform: scale(1.0);
+  }
+}
+
+/* Buttons */
+.button{
+	transition: all 0.2s;
+	line-height: 40px;
+	display: inline-block;
+	padding: 0px 15px 0px 15px;
+	width: auto;
+	background: #1975cd;
+	background: linear-gradient(to top, #1975cd, #4d9ce9);
+	background-size: 100% 200%;
+	background-position: top;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.button:hover{
+	background-position: bottom;
+}
+
+.button:active{
+	transition: all 0.1s;
+  transform: scale(0.9, 0.9);
+}
+
+#dialog{
+  display: none;
+  position: fixed;
+  max-width: 60vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  box-shadow: 0px 0px 0px 200vw rgba(0,0,0,0.6);
+  border: 10px solid #fff;
+}
+
+#dialog img{
+  width: 100%;
+}
+
+.active-dlg{
+  display: block !important;
+}
+
+#dlg-close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  background: #fff;
+  color: #222;
+  text-decoration: none;
+}
+
+#dlg-close:hover{
+  transform: scale(1.1);
+}
+
+.slider{
+  height: 80vh;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.slider div{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider div:before{
+  content: " ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
+}
+
+#description{
+  padding: 10px;
+  font-size: 22px;
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bottom-menu{
+  padding: 0px;
+  list-style-type: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.bottom-menu li{
+  float: left;
+  width: 12.5%;
+}
+
+.bottom-menu li span{
+  display: inline-block;
+  position: relative;
+}
+
+.bottom-menu li span:hover{
+  cursor: pointer;
+}
+
+.active-span{
+  transform: scale(1.2);
+}
+
+.grid-parent{
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0px;
+  overflow: auto;
+}
+
+.grid{
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 33.33%;
+  font-size: 150%;
+}
+
+.social-links a{
+  margin: 10px;
+  display: inline-block;
+  font-size: 26px;
+  font-size: calc(20px + 2vw);
+  color: inherit;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-links a:hover{
+  transform: scale(1.4);
+}
+
+@media only screen and (max-width: 960px) {
+  .grid{
+    width: 100%;
+  }
+
+  #menu-container{
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0px;
+    left: initial;
+    right: -160px;
+    width: 150px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  #menu-toggle{
+    visibility: visible;
+  }
+
+  #menubar li{
+    float: left;
+  }
+
+  .bottom-menu {
+    white-space: nowrap;
+    padding: 0px;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .bottom-menu li {
+    display: inline-block;
+    float: none;
+    padding: 5px 10px 5px 10px;
+    width: auto;
+  }
+}
