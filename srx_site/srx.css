@@ -11,6 +11,14 @@ body{
   font-weight: 700;
 }
 
+a{
+  color: inherit;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
 p{
   font-weight: 400;
 }
@@ -240,7 +248,8 @@ h1, h2, h3, h4, h5, h6 {
 #dialog{
   display: none;
   position: fixed;
-  max-width: 60vw;
+  max-width: 700px;
+  width: 80vw;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -277,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider{
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -321,7 +330,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bottom-menu li{
   float: left;
-  width: 12.5%;
+  width: 11.11%;
 }
 
 .bottom-menu li span{
@@ -345,12 +354,25 @@ h1, h2, h3, h4, h5, h6 {
   overflow: auto;
 }
 
-.grid{
+.grid, .grid-2, .grid-3{
   float: left;
   padding: 10px;
   box-sizing: border-box;
-  width: 33.33%;
   font-size: 150%;
+}
+
+.grid{
+  width: 33.33%;
+}
+
+.grid-2{
+  width: 25%;
+}
+
+.grid-3{
+  width: 75%;
+  text-align: left;
+  border-left: 1px solid rgba(255,255,255,0.4);
 }
 
 .social-links a{
@@ -366,9 +388,20 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.4);
 }
 
+.footer{
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 12px;
+}
+
 @media only screen and (max-width: 960px) {
-  .grid{
+  .grid, .grid-2, .grid-3{
     width: 100%;
+  }
+
+  .grid-3{
+    border: none;
   }
 
   #menu-container{

@@ -27,12 +27,11 @@ $('#dlg-close').click(function(){
 });
 
 $(window).on('load', function () {
-  // PAGE IS FULLY LOADED  
-  // FADE OUT YOUR OVERLAYING DIV
   $('#load-overlay').fadeOut();
 });
 
 $.scrollify({
+  setHeights: false,
   section: ".section"
 });
 
